@@ -9,7 +9,10 @@ export const StyledInput = styled.input`
   font-weight: 300;
 
   &:focus {   
-    outline: none;
-    background-color: #959595;
-  } 
+    outline: none;  
+  }
+  
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #959595 inset;
+  }
 `;
