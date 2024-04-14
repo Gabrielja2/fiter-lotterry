@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 
-export const StyledApp = styled.div`
+export const StyledLoginTemplate = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;

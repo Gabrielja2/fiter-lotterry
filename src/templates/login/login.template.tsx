@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { StyledApp } from './login.styled';
+import { StyledLoginTemplate } from './login.styled';
 import { UserServices } from '../../services';
-import { Form, Title, SubTitle } from '../../components';
+import { Title, SubTitle, Form } from '../../components';
 
 export const LoginTemplate = () => {
   const handleLogin = async (data: { [key: string]: string }) => {
@@ -15,7 +15,7 @@ export const LoginTemplate = () => {
   ];
 
   return (
-    <StyledApp>
+    <StyledLoginTemplate>
       <Title />
       <SubTitle subtitle={'Login'} />
       <Form fields={loginFields} onSubmit={handleLogin} buttonName='Entrar' />
@@ -25,6 +25,6 @@ export const LoginTemplate = () => {
           Registrar
         </Link>
       </span>
-    </StyledApp>
+    </StyledLoginTemplate>
   );
 };

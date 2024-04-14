@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { StyledApp } from './register.styled';
+import { StyledRegisterTemplate } from './register.styled';
 import { UserServices } from '../../services';
-import { Form, Title, SubTitle } from '../../components';
+import { Title, SubTitle, Form } from '../../components';
 
 export const RegisterTemplate = () => {
   const handleRegister = async (data: { [key: string]: string }) => {
@@ -15,7 +15,7 @@ export const RegisterTemplate = () => {
   ];
 
   return (
-    <StyledApp>
+    <StyledRegisterTemplate>
       <Title />
       <SubTitle subtitle={'Register'} />
       <Form
@@ -29,6 +29,6 @@ export const RegisterTemplate = () => {
           Entrar
         </Link>
       </span>
-    </StyledApp>
+    </StyledRegisterTemplate>
   );
 };
