@@ -3,10 +3,13 @@ import { StyledLoginTemplate } from './login.styled';
 import { UserServices } from '../../services';
 import { Title, SubTitle, Form } from '../../components';
 import { ToastifyAdapter } from '../helpers/toast';
+import { useNavigate } from 'react-router-dom';
+import { RegisterProps } from '../types';
 
 export const LoginTemplate = () => {
-  const handleLogin = async (data: { [key: string]: string }) => {
-    const { email, password } = data;
+  const navigate = useNavigate();
+
+  const handleLogin = async ({ email, password }: RegisterProps) => {
     const response = await UserServices.login(email, password);
 
     if (typeof response === 'string') {
@@ -17,6 +20,8 @@ export const LoginTemplate = () => {
         theme: 'dark',
         type: 'success',
       });
+      localStorage.setItem('token', response);
+      navigate('/profile');
     } else {
       ToastifyAdapter.toast(`${response['message']}`, {
         position: 'top-right',

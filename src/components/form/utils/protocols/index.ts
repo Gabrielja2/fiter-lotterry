@@ -6,6 +6,6 @@ export interface Field {
 
 export interface FormProps {
     fields: Field[];
-    onSubmit: (data: { [key: string]: string }) => void;
+    onSubmit: ({ email, password }: { email: string; password: string }) => void;
     buttonName: string;
 }

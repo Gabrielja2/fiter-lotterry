@@ -1,10 +1,10 @@
-import { StyledTitle } from './title.styled';
+import { StyledTitleContainer, StyledTitle } from './title.styled';
 
 export const Title: React.FC = () => {
   return (
-    <StyledTitle>
-      <h1>FITER</h1>
-      <h1>LOTTERY</h1>
-    </StyledTitle>
+    <StyledTitleContainer>
+      <StyledTitle color='#ffffff'>FITER</StyledTitle>
+      <StyledTitle color='#17e72c'>LOTTERY</StyledTitle>
+    </StyledTitleContainer>
   );
 };

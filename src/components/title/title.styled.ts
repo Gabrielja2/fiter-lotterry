@@ -1,16 +1,12 @@
 import styled from "styled-components";
 
-export const StyledTitle = styled.div`
+export const StyledTitleContainer = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 10px;
-
-  h1:nth-child(1) {
-    color: #ffffff;
-    font-weight: normal;
-  }
-  h1:nth-child(2) {
-    color: #17e72c;
-    font-weight: normal;
-  }
+  gap: 10px;  
 `;
+
+export const StyledTitle = styled.h1<{ color: string }>`
+  color: ${({ color }) => color};
+  font-weight: normal;
+`
