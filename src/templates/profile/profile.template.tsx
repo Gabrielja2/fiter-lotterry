@@ -1,3 +1,10 @@
+import { Header } from '../../components';
+import { StyledProfileContainer } from './profile.styled';
+
 export const ProfileTemplate = () => {
-  return <div>Profile Template</div>;
+  return (
+    <StyledProfileContainer>
+      <Header />
+    </StyledProfileContainer>
+  );
 };

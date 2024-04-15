@@ -6,3 +6,5 @@ export * from "./label";
 export * from "./input";
 export * from "./error.message";
 export * from "./not.found.error";
+export * from "./header";
+export * from "./user.info";
