@@ -46,9 +46,12 @@ export const StyledTicketButtonContainer = styled.div`
   width: 234px;
 `
 
-export const StyledTicketButton = styled.button`
-  width: 205px;
-  height: 47px;
+export const StyledTicketButton = styled.button<{ width?: string, height?: string }>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: ${({ width }) => width || '205px'};
+  height: ${({ height }) => height || '47px'};
   border: none;
   border-radius: 10px;
   background-color: #2C3CCB;
@@ -56,6 +59,7 @@ export const StyledTicketButton = styled.button`
   color: #ffffff;
   font-weight: bold;
   cursor: pointer;
+  gap: 10px;
 `
 
 export const StyledLogoutButton = styled.button`
