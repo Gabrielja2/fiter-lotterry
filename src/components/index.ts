@@ -10,3 +10,4 @@ export * from "./header";
 export * from "./user.info";
 export * from "./profile.info.cards";
 export * from "./profile.info.card";
+export * from "./profile.tickets";
