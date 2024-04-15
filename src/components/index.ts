@@ -4,4 +4,5 @@ export * from "./subtitle";
 export * from "./button";
 export * from "./label";
 export * from "./input";
-export * from "./error";
+export * from "./error.message";
+export * from "./not.found.error";

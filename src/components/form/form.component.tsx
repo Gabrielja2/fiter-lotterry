@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { FormProps, formSchema, FormErrors } from './utils';
-import { Button, Label, Input, Error } from '../../components';
+import { Button, Label, Input, ErrorMessage } from '../../components';
 
 export const Form: React.FC<FormProps> = ({ fields, onSubmit, buttonName }) => {
   const [formData, setFormData] = useState<{ [key: string]: string }>({});
@@ -44,7 +44,9 @@ export const Form: React.FC<FormProps> = ({ fields, onSubmit, buttonName }) => {
             autoComplete='on'
           />
           {errors && (
-            <Error>{errors[field.name as keyof FormErrors]?.message}</Error>
+            <ErrorMessage>
+              {errors[field.name as keyof FormErrors]?.message}
+            </ErrorMessage>
           )}
         </StyledForm>
       ))}

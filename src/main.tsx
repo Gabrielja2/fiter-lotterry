@@ -5,27 +5,28 @@ import LoginPage from './pages/login.page';
 import RegisterPage from './pages/register.page';
 import { GlobalStyle } from './global.styled';
 import ProfilePage from './pages/profile';
+import { NotFoundErrorMessage } from './components';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <div>hello</div>,
-    errorElement: <div>not found</div>,
+    element: <LoginPage />,
+    errorElement: <NotFoundErrorMessage children={'Home page not found'} />,
   },
   {
     path: '/login',
     element: <LoginPage />,
-    errorElement: <div>not found</div>,
+    errorElement: <NotFoundErrorMessage children={'Login page not found'} />,
   },
   {
     path: '/register',
     element: <RegisterPage />,
-    errorElement: <div>not found</div>,
+    errorElement: <NotFoundErrorMessage children={'Register page not found'} />,
   },
   {
     path: '/profile',
     element: <ProfilePage />,
-    errorElement: <div>not found</div>,
+    errorElement: <NotFoundErrorMessage children={'Profile page not found'} />,
   },
 ]);
 
