@@ -11,6 +11,10 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .link {
-    color: #0E0D30;
+    color: #0E0D30;   
   }
-`;
+
+  .link:hover {
+    color: #707293;
+  }
+`

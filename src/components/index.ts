@@ -8,3 +8,5 @@ export * from "./error.message";
 export * from "./not.found.error";
 export * from "./header";
 export * from "./user.info";
+export * from "./profile.info.cards";
+export * from "./profile.info.card";

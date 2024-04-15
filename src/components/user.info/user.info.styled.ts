@@ -53,7 +53,7 @@ export const StyledTicketButton = styled.button<{ width?: string, height?: strin
   width: ${({ width }) => width || '205px'};
   height: ${({ height }) => height || '47px'};
   border: none;
-  border-radius: 10px;
+  border-radius: 15px;
   background-color: #2C3CCB;
   font-size: 18px;
   color: #ffffff;
