@@ -4,7 +4,7 @@ export const StyledTitleContainer = styled.div`
   display: flex;
   gap: 5px;
   width: 200px;
-
+  justify-content: center;
   @media (max-width: 768px) {
     width: 100%;
   }
