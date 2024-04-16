@@ -1,25 +1,72 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const StyledText = styled.p`
-    display: flex;
-    align-items: end;  
-    color: #DD8741;
-    padding: 8px;
-    gap: 10px;
-    font-weight: bold;
-    font-size: 18px;    
-`
+type StyledTextProps = {
+    color?: string;
+    fontSize?: string;
+    fontWeight?: string;
+    background?: string;
+    padding?: string;
+    borderRadius?: string;
+    wdith?: string;
+    height?: string;
+    alignItems?: string;
+    justifyContent?: string;
+};
+
+export const StyledText = styled.p<StyledTextProps>`
+  background-color: ${({ background }) => background};
+  display: flex;
+  align-items: ${({ alignItems }) => alignItems};
+  justify-content: ${({ justifyContent }) => justifyContent};
+  color: ${({ color }) => color || '#A7AACD'};
+  font-weight: ${({ fontWeight }) => fontWeight || 'bold'};
+  font-size: ${({ fontSize }) => fontSize || '12px'};
+  padding: ${({ padding }) => padding};
+  border-radius: ${({ borderRadius }) => borderRadius};
+  width: ${({ wdith }) => wdith};
+  height: ${({ height }) => height};
+  
+`;
 
 export const StyledTicketCard = styled.div`
-    display: flex;   
-    flex-direction: column;
-    border: 1px #177FE9 solid;
-    width: 240px;
-    height: 285px;
-    gap: 10px;
-    margin-top: 30px;   
-`
+  display: flex;
+  flex-direction: column;
+  border: 1px #177FE9 solid;
+  width: 240px;
+  height: 285px;
+  margin-top: 30px;
+`;
 
 export const StyledHeader = styled.div`
-    border: 1px white solid;
-`
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px #177FE9 dotted;
+  padding: 15px;
+`;
+
+export const StyledFlexDiv = styled.div<{
+    display?: string;
+    gap?: string;
+    alignItems?: string;
+    wrap?: string;
+    justifyContent?: string;
+    flexDirection?: string;
+    padding?: string;
+    gridTemplateColumns?: string;
+    width?: string;
+    border?: string;
+    margin?: string;
+}>`
+  width: ${({ width }) => width};
+  display: ${({ display }) => display};
+  flex-direction: ${({ flexDirection }) => flexDirection};
+  gap: ${({ gap }) => gap};
+  padding: ${({ padding }) => padding};
+  flex-wrap: ${({ wrap }) => wrap};
+  align-items: ${({ alignItems }) => alignItems};
+  justify-content: ${({ justifyContent }) => justifyContent};
+  grid-template-columns: ${({ gridTemplateColumns }) => gridTemplateColumns};
+  border: ${({ border }) => border}; 
+  margin: ${({ margin }) => margin};
+  
+`;

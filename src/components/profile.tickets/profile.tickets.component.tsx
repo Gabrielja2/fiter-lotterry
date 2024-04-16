@@ -43,8 +43,8 @@ export const ProfileTickets = () => {
         </StyledAddTicketContainer>
         {tickets.map((ticket, index) => {
           return (
-            <StyledTicketCardContainer>
-              <TicketCard key={index} {...ticket} />
+            <StyledTicketCardContainer key={index}>
+              <TicketCard {...ticket} />
             </StyledTicketCardContainer>
           );
         })}

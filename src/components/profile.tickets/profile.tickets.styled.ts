@@ -95,8 +95,7 @@ export const StyledFooterText = styled.p`
 
 export const StyledTicketContainer = styled.div`
     display: flex;
-    flex-wrap: wrap;
-    width: 100%;
+    flex-wrap: wrap;    
 `
 
 export const StyledTotalContainer = styled.div`

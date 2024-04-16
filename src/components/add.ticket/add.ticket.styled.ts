@@ -7,8 +7,7 @@ export const StyledAddTicket = styled.div`
     flex-direction: column;
     border: 3px #EA8E41 dotted;
     width: 240px;
-    height: 285px;
-    gap: 10px;
+    height: 285px;  
     margin-top: 30px;   
     
 `
