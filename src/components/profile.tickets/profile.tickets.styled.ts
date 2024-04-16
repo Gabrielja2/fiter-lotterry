@@ -5,7 +5,7 @@ export const StyledSection = styled.section`
     flex-direction: column;
     background-color: #191B3D;
     border-radius: 10px;    
-    height: 568px;
+    /* height: 568px; */
 
     @media (max-width: 768px) {
         width: 100%;
@@ -116,4 +116,12 @@ export const StyledTotalPrice = styled.p`
     font-weight: bold;
     font-size: 12px;
     color: #17E72C;
+`
+
+export const StyledTicketCardContainer = styled.div`
+     display: flex;
+    align-items: start;
+    padding: 10px 27px;
+    justify-content: center;
+    flex-direction: column;
 `

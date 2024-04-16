@@ -1,4 +1,4 @@
-import { AddTicketCard } from '../../components';
+import { AddTicket, TicketCard } from '../../components';
 import {
   StyledNav,
   StyledSection,
@@ -13,10 +13,19 @@ import {
   StyledTotalContainer,
   StyledTotal,
   StyledTotalPrice,
+  StyledTicketCardContainer,
 } from './profile.tickets.styled';
 import InfoIcon from '../../assets/info-button1.png';
+import { useState } from 'react';
+import { ITicket } from './utils';
 
 export const ProfileTickets = () => {
+  const [tickets, setTickets] = useState<
+    {
+      [key: number]: ITicket;
+    }[]
+  >([]);
+
   return (
     <StyledSection>
       <StyledHeader>
@@ -28,11 +37,17 @@ export const ProfileTickets = () => {
       </StyledHeader>
       <StyledTicketContainer>
         <StyledAddTicketContainer>
-          <AddTicketCard />
+          <AddTicket
+            onClick={() => setTickets((oldList) => [...oldList, {}])}
+          />
         </StyledAddTicketContainer>
-        <StyledAddTicketContainer>
-          <AddTicketCard />
-        </StyledAddTicketContainer>
+        {tickets.map((ticket, index) => {
+          return (
+            <StyledTicketCardContainer>
+              <TicketCard key={index} {...ticket} />
+            </StyledTicketCardContainer>
+          );
+        })}
       </StyledTicketContainer>
       <StyledTotalContainer>
         <StyledTotal>{'VALOR TOTAL: '}</StyledTotal>
