@@ -21,14 +21,14 @@ export const TicketCard = () => {
         display='grid'
         gridTemplateColumns='repeat(5, 1fr)'
         gap='10px'
-        margin='auto'
+        margin=' 0px auto'
       >
         {[...Array(ticketNumbers)].map((_, index) => (
           <StyledText
             key={index}
             color='#FFFFFF'
             fontSize='16px'
-            background='#EA8E41'
+            background='#313051'
             borderRadius='100%'
             height='30px'
             wdith='30px'
