@@ -3,25 +3,18 @@ import { StyledDiv } from './div.container.styled';
 export const DivContainer = ({
   children,
   display,
-  alignItems,
-  justifyContent,
-  flexDirection,
+  alignitems,
+  justifycontent,
+  flexdirection,
   gap,
   margin,
   padding,
-  paddingTop,
-  paddingBottom,
-  paddingRight,
-  paddingLeft,
   width,
   height,
   background,
-  borderRadius,
+  borderradius,
   border,
-  borderLeft,
-  borderRight,
-  borderTop,
-  borderBottom,
+  borderright,
   color,
   fontSize,
   fontWeight,
@@ -29,25 +22,18 @@ export const DivContainer = ({
 }: {
   children?: React.ReactNode;
   display?: string;
-  alignItems?: string;
-  justifyContent?: string;
-  flexDirection?: string;
+  alignitems?: string;
+  justifycontent?: string;
+  flexdirection?: string;
   gap?: string;
   margin?: string;
   padding?: string;
-  paddingTop?: string;
-  paddingBottom?: string;
-  paddingRight?: string;
-  paddingLeft?: string;
   width?: string;
   height?: string;
   background?: string;
-  borderRadius?: string;
+  borderradius?: string;
   border?: string;
-  borderLeft?: string;
-  borderRight?: string;
-  borderTop?: string;
-  borderBottom?: string;
+  borderright?: string;
   color?: string;
   fontSize?: string;
   fontWeight?: string;
@@ -56,25 +42,18 @@ export const DivContainer = ({
   return (
     <StyledDiv
       display={display}
-      alignItems={alignItems}
-      justifyContent={justifyContent}
-      flexDirection={flexDirection}
+      alignitems={alignitems}
+      justifycontent={justifycontent}
+      flexdirection={flexdirection}
       gap={gap}
       margin={margin}
       padding={padding}
-      paddingTop={paddingTop}
-      paddingBottom={paddingBottom}
-      paddingRight={paddingRight}
-      paddingLeft={paddingLeft}
       width={width}
       height={height}
       background={background}
-      borderRadius={borderRadius}
+      borderradius={borderradius}
       border={border}
-      borderLeft={borderLeft}
-      borderRight={borderRight}
-      borderTop={borderTop}
-      borderBottom={borderBottom}
+      borderright={borderright}
       color={color}
       fontSize={fontSize}
       fontWeight={fontWeight}

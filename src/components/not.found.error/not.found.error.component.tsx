@@ -8,9 +8,9 @@ export const NotFoundErrorMessage = ({
   return (
     <DivContainer
       display='flex'
-      alignItems='center'
-      justifyContent='center'
-      flexDirection='column'
+      alignitems='center'
+      justifycontent='center'
+      flexdirection='column'
       width='100vw'
       height='100vh'
     >

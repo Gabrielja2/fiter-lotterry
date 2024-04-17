@@ -32,8 +32,8 @@ export const TicketCard = () => {
             borderRadius='100%'
             height='30px'
             wdith='30px'
-            alignItems='center'
-            justifyContent='center'
+            alignitems='center'
+            justifycontent='center'
           >
             {index + 1}
           </StyledText>

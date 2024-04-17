@@ -6,28 +6,34 @@ export const Text = ({
   color,
   fontWeight,
   display,
-  alignItems,
-  justifyContent,
+  alignitems,
+  justifycontent,
   gap,
+  width,
+  height,
 }: {
   children: React.ReactNode;
   fontSize?: string;
   color?: string;
   fontWeight?: string;
   display?: string;
-  alignItems?: string;
-  justifyContent?: string;
+  alignitems?: string;
+  justifycontent?: string;
   gap?: string;
+  width?: string;
+  height?: string;
 }) => {
   return (
     <StyledText
       display={display}
-      alignItems={alignItems}
+      alignitems={alignitems}
       fontSize={fontSize}
       color={color}
       fontWeight={fontWeight}
-      justifyContent={justifyContent}
+      justifycontent={justifycontent}
       gap={gap}
+      width={width}
+      height={height}
     >
       {children}
     </StyledText>

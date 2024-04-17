@@ -1,23 +1,23 @@
 import styled from 'styled-components';
 
 type StyledTextProps = {
-    color?: string;
-    fontSize?: string;
-    fontWeight?: string;
-    background?: string;
-    padding?: string;
-    borderRadius?: string;
-    wdith?: string;
-    height?: string;
-    alignItems?: string;
-    justifyContent?: string;
+  color?: string;
+  fontSize?: string;
+  fontWeight?: string;
+  background?: string;
+  padding?: string;
+  borderRadius?: string;
+  wdith?: string;
+  height?: string;
+  alignitems?: string;
+  justifycontent?: string;
 };
 
 export const StyledText = styled.p<StyledTextProps>`
   background-color: ${({ background }) => background};
   display: flex;
-  align-items: ${({ alignItems }) => alignItems};
-  justify-content: ${({ justifyContent }) => justifyContent};
+  align-items: ${({ alignitems }) => alignitems};
+  justify-content: ${({ justifycontent }) => justifycontent};
   color: ${({ color }) => color || '#A7AACD'};
   font-weight: ${({ fontWeight }) => fontWeight || 'bold'};
   font-size: ${({ fontSize }) => fontSize || '12px'};
@@ -45,17 +45,17 @@ export const StyledHeader = styled.div`
 `;
 
 export const StyledFlexDiv = styled.div<{
-    display?: string;
-    gap?: string;
-    alignItems?: string;
-    wrap?: string;
-    justifyContent?: string;
-    flexDirection?: string;
-    padding?: string;
-    gridTemplateColumns?: string;
-    width?: string;
-    border?: string;
-    margin?: string;
+  display?: string;
+  gap?: string;
+  alignitems?: string;
+  wrap?: string;
+  justifycontent?: string;
+  flexDirection?: string;
+  padding?: string;
+  gridTemplateColumns?: string;
+  width?: string;
+  border?: string;
+  margin?: string;
 }>`
   width: ${({ width }) => width};
   display: ${({ display }) => display};
@@ -63,8 +63,8 @@ export const StyledFlexDiv = styled.div<{
   gap: ${({ gap }) => gap};
   padding: ${({ padding }) => padding};
   flex-wrap: ${({ wrap }) => wrap};
-  align-items: ${({ alignItems }) => alignItems};
-  justify-content: ${({ justifyContent }) => justifyContent};
+  align-items: ${({ alignitems }) => alignitems};
+  justify-content: ${({ justifycontent }) => justifycontent};
   grid-template-columns: ${({ gridTemplateColumns }) => gridTemplateColumns};
   border: ${({ border }) => border}; 
   margin: ${({ margin }) => margin};

@@ -4,8 +4,8 @@ export const StyledDiv = styled.div<{
   background?: string,
   color?: string,
   display?: string,
-  alignItems?: string,
-  justifyContent?: string
+  alignitems?: string,
+  justifycontent?: string
   flexDirection?: string
   gap?: string
   margin?: string
@@ -26,8 +26,8 @@ export const StyledDiv = styled.div<{
   fontWeight?: string
 }>`
   display: ${({ display }) => display};
-  align-items: ${({ alignItems }) => alignItems};
-  justify-content: ${({ justifyContent }) => justifyContent};
+  align-items: ${({ alignitems }) => alignitems};
+  justify-content: ${({ justifycontent }) => justifycontent};
   flex-direction: ${({ flexDirection }) => flexDirection};
   color: ${({ color }) => color};
   background: ${({ background }) => background};

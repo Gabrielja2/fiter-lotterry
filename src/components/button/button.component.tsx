@@ -9,17 +9,18 @@ export const Button = ({
   height,
   padding,
   border,
-  borderRadius,
+  borderradius,
   background,
   display,
-  alignItems,
-  justifyContent,
+  alignitems,
+  justifycontent,
   gap,
   fontWeight,
   fontSize,
   transition,
   hover,
   margin,
+  onClick,
 }: {
   color?: string;
   children?: React.ReactNode;
@@ -28,11 +29,11 @@ export const Button = ({
   width?: string;
   padding?: string;
   border?: string;
-  borderRadius?: string;
+  borderradius?: string;
   background?: string;
   display?: string;
-  alignItems?: string;
-  justifyContent?: string;
+  alignitems?: string;
+  justifycontent?: string;
   gap?: string;
   fontWeight?: string;
   fontSize?: string;
@@ -40,6 +41,7 @@ export const Button = ({
   hover?: string;
   height?: string;
   margin?: string;
+  onClick?: () => void;
 }) => {
   return (
     <StyledButton
@@ -49,11 +51,11 @@ export const Button = ({
       disabled={disabled}
       color={color}
       border={border}
-      borderRadius={borderRadius}
+      borderradius={borderradius}
       background={background}
       display={display}
-      alignItems={alignItems}
-      justifyContent={justifyContent}
+      alignitems={alignitems}
+      justifycontent={justifycontent}
       gap={gap}
       fontWeight={fontWeight}
       fontSize={fontSize}
@@ -61,6 +63,7 @@ export const Button = ({
       hover={hover}
       height={height}
       margin={margin}
+      onClick={onClick}
     >
       {children}
     </StyledButton>

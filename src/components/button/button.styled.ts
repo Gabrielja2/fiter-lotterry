@@ -9,10 +9,10 @@ export const StyledButton = styled.button<{
   color?: string,
   fontWeight?: string,
   fontSize?: string,
-  borderRadius?: string,
+  borderradius?: string,
   border?: string,
-  alignItems?: string,
-  justifyContent?: string,
+  alignitems?: string,
+  justifycontent?: string,
   padding?: string,
   gap?: string,
   display?: string
@@ -21,12 +21,12 @@ export const StyledButton = styled.button<{
   margin?: string
 }>`
   display: ${({ display }) => display};
-  align-items: ${({ alignItems }) => alignItems};
-  justify-content: ${({ justifyContent }) => justifyContent};
+  align-items: ${({ alignitems }) => alignitems};
+  justify-content: ${({ justifycontent }) => justifycontent};
   width: ${({ width }) => width};
   height: ${({ height }) => height};
   border: ${({ border }) => border};
-  border-radius: ${({ borderRadius }) => borderRadius};
+  border-radius: ${({ borderradius }) => borderradius};
   background-color: ${({ background }) => background};
   font-size: ${({ fontSize }) => fontSize};
   color: ${({ color }) => color};

@@ -3,28 +3,32 @@ import LogoutIcon from '../../assets/icon_logout.png';
 import CashIcon from '../../assets/cifrao1.png';
 import { Text, Button } from '../../components';
 
-export const ModalMenu = () => {
+type ModalMenuProps = {
+  userId: string;
+  onClick: () => void;
+};
+export const ModalMenu = ({ userId, onClick }: ModalMenuProps) => {
   return (
     <ModalContainer>
-      <Text fontSize='16px' color='#0D67BD' fontWeight='bold'>
-        id: fb24Hg..
+      <Text width='90px' fontSize='16px' color='#0D67BD' fontWeight='bold'>
+        id: {userId}
       </Text>
-      <Text fontSize='14px' color='#17E72C' fontWeight='bold'>
+      <Text width='90px' fontSize='14px' color='#17E72C' fontWeight='bold'>
         R$: 50.000,00
       </Text>
-      <Button border='none' background='transparent'>
+      <Button onClick={onClick} border='none' background='transparent'>
         <img src={LogoutIcon}></img>
       </Button>
       <Button
         background='#2C3CCB'
-        borderRadius='5px'
+        borderradius='5px'
         border='none'
         color='#f2f2f2'
         width='100%'
         height='47px'
         display='flex'
-        alignItems='center'
-        justifyContent='center'
+        alignitems='center'
+        justifycontent='center'
         gap='10px'
         fontSize='18px'
         fontWeight='bold'

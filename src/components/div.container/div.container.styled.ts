@@ -4,31 +4,24 @@ export const StyledDiv = styled.div<{
   background?: string,
   color?: string,
   display?: string,
-  alignItems?: string,
-  justifyContent?: string
-  flexDirection?: string
+  alignitems?: string,
+  justifycontent?: string
+  flexdirection?: string
   gap?: string
   margin?: string
   padding?: string
   width?: string
   height?: string
-  borderRadius?: string
+  borderradius?: string
   border?: string
-  borderBottom?: string
-  borderRight?: string
-  borderLeft?: string
-  borderTop?: string
-  paddingTop?: string
-  paddingBottom?: string
-  paddingRight?: string
-  paddingLeft?: string
+  borderright?: string
   fontSize?: string
   fontWeight?: string
 }>`
   display: ${({ display }) => display};
-  align-items: ${({ alignItems }) => alignItems};
-  justify-content: ${({ justifyContent }) => justifyContent};
-  flex-direction: ${({ flexDirection }) => flexDirection};
+  align-items: ${({ alignitems }) => alignitems};
+  justify-content: ${({ justifycontent }) => justifycontent};
+  flex-direction: ${({ flexdirection }) => flexdirection};
   color: ${({ color }) => color};
   background: ${({ background }) => background};
   gap: ${({ gap }) => gap};
@@ -36,16 +29,9 @@ export const StyledDiv = styled.div<{
   padding: ${({ padding }) => padding};
   width: ${({ width }) => width};
   height: ${({ height }) => height};
-  border-radius: ${({ borderRadius }) => borderRadius};
+  border-radius: ${({ borderradius }) => borderradius};
   border: ${({ border }) => border};
-  border-bottom: ${({ borderBottom }) => borderBottom};
-  border-right: ${({ borderRight }) => borderRight};
-  border-left: ${({ borderLeft }) => borderLeft};
-  border-top: ${({ borderTop }) => borderTop};
-  padding-top: ${({ paddingTop }) => paddingTop};
-  padding-bottom: ${({ paddingBottom }) => paddingBottom};
-  padding-right: ${({ paddingRight }) => paddingRight};
-  padding-left: ${({ paddingLeft }) => paddingLeft};
+  border-right: ${({ borderright }) => borderright};  
   font-size: ${({ fontSize }) => fontSize};
   font-weight: ${({ fontWeight }) => fontWeight};
 `
