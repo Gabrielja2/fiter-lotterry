@@ -6,12 +6,12 @@ export const ModalContainer = styled.div`
   position: absolute;
   align-items: center;  
   padding: 20px;
-  top: 135px;
+  top: 100px;
   right: 32px;
   background-color: #0E0D30;
   border: 1px #17e72c solid;
   opacity: 0.7;
-  gap: 25px;
+  gap: 15px;
   width: 200px;
 `;
 
