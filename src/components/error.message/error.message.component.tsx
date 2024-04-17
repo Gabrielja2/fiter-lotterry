@@ -1,9 +1,13 @@
 import React from 'react';
 import { FormErrors } from '../form/utils';
-import { StyledErrorMessage } from './error.message.styled';
+import { Text } from '../text';
 
 export const ErrorMessage = ({
   children,
 }: React.PropsWithChildren<FormErrors>) => {
-  return <StyledErrorMessage>{children}</StyledErrorMessage>;
+  return (
+    <Text color='red' fontSize='12px'>
+      {children}
+    </Text>
+  );
 };

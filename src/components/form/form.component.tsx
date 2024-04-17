@@ -50,7 +50,16 @@ export const Form: React.FC<FormProps> = ({ fields, onSubmit, buttonName }) => {
           )}
         </StyledForm>
       ))}
-      <Button disabled={isSubmitting} color='#0E0D30' type='submit'>
+      <Button
+        disabled={isSubmitting}
+        color='#ffffff'
+        type='submit'
+        width='100%'
+        padding='10px'
+        borderRadius='5px'
+        border='none'
+        background='#0E0D30'
+      >
         {isSubmitting ? 'Carregando...' : buttonName}
       </Button>
     </StyledFormContainer>

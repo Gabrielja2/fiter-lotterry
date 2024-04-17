@@ -14,3 +14,4 @@ export const ModalContainer = styled.div`
   gap: 25px;
   width: 200px;
 `;
+

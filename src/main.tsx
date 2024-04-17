@@ -11,22 +11,19 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <LoginPage />,
-    errorElement: <NotFoundErrorMessage children={'Home page not found'} />,
+    errorElement: <NotFoundErrorMessage children={'Page not found'} />,
   },
   {
     path: '/login',
     element: <LoginPage />,
-    errorElement: <NotFoundErrorMessage children={'Login page not found'} />,
   },
   {
     path: '/register',
     element: <RegisterPage />,
-    errorElement: <NotFoundErrorMessage children={'Register page not found'} />,
   },
   {
     path: '/profile',
     element: <ProfilePage />,
-    errorElement: <NotFoundErrorMessage children={'Profile page not found'} />,
   },
 ]);
 

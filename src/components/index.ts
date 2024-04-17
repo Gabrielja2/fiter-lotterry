@@ -7,9 +7,13 @@ export * from "./input";
 export * from "./error.message";
 export * from "./not.found.error";
 export * from "./header";
+export * from "./header.modal";
 export * from "./user.info";
 export * from "./profile.info.cards";
 export * from "./profile.info.card";
 export * from "./profile.tickets";
 export * from "./add.ticket";
 export * from "./ticket.card"
+export * from "./text";
+export * from "./div.container";
+

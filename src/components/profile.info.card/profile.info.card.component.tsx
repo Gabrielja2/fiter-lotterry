@@ -1,19 +1,35 @@
-import {
-  StyledCardTitle,
-  StyledProfileInfoCard,
-} from './profile.info.card.styled';
 import { ProfileInfoCardProps } from './types';
 import AddDinheiro from '../../assets/add-dinheiro.png';
+import { DivContainer, Text } from '../../components';
 
 export const ProfileInfoCard = (card: ProfileInfoCardProps) => {
-  console.log('card', card);
-
   return (
-    <StyledProfileInfoCard>
-      <StyledCardTitle>
+    <DivContainer
+      display='flex'
+      alignItems='start'
+      justifyContent='center'
+      flexDirection='column'
+      padding='10px'
+      gap='10px'
+      width='223px'
+      height='115px'
+      border='1px #0E0D30 solid'
+      color='white'
+      background='#191B3D'
+      borderRadius='10px'
+    >
+      <Text
+        display='flex'
+        alignItems='center'
+        justifyContent='center'
+        gap='10px'
+        fontSize='16px'
+        fontWeight='bold'
+        color='#A7AACD'
+      >
         {card.title}
         <img src={card.src}></img>
-      </StyledCardTitle>
+      </Text>
       <p
         style={{
           color: card.primaryColor,
@@ -36,6 +52,6 @@ export const ProfileInfoCard = (card: ProfileInfoCardProps) => {
         {card.description}
         {card.title === 'SALDO' ? <img src={AddDinheiro}></img> : null}
       </p>
-    </StyledProfileInfoCard>
+    </DivContainer>
   );
 };
