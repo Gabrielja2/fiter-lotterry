@@ -24,7 +24,7 @@ export const StyledHeader = styled.header`
     border-bottom: 2px #212144 solid;
 `
 
-export const StyledNav = styled.nav<{ color: string, border?: string }>`
+export const StyledNav = styled.nav<{ color: string, $border?: string }>`
     display: flex;
     gap: 10px;
     height: 100%;
@@ -33,7 +33,7 @@ export const StyledNav = styled.nav<{ color: string, border?: string }>`
     font-weight: bold;
     padding: 30px 0px;
     font-size: 14px;
-    border-bottom: ${({ border }) => border || '2px #212144 solid'}; ;
+    border-bottom: ${({ $border }) => $border || '2px #212144 solid'}; ;
 
 `
 

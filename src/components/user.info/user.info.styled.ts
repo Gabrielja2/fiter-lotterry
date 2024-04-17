@@ -4,7 +4,7 @@ export const StyledDiv = styled.div<{
   background?: string,
   color?: string,
   display?: string,
-  alignitems?: string,
+  $alignitems?: string,
   justifycontent?: string
   flexDirection?: string
   gap?: string
@@ -13,20 +13,12 @@ export const StyledDiv = styled.div<{
   width?: string
   height?: string
   borderRadius?: string
-  border?: string
-  borderBottom?: string
-  borderRight?: string
-  borderLeft?: string
-  borderTop?: string
-  paddingTop?: string
-  paddingBottom?: string
-  paddingRight?: string
-  paddingLeft?: string
+  $border?: string
   fontSize?: string
   fontWeight?: string
 }>`
   display: ${({ display }) => display};
-  align-items: ${({ alignitems }) => alignitems};
+  align-items: ${({ $alignitems }) => $alignitems};
   justify-content: ${({ justifycontent }) => justifycontent};
   flex-direction: ${({ flexDirection }) => flexDirection};
   color: ${({ color }) => color};
@@ -37,15 +29,8 @@ export const StyledDiv = styled.div<{
   width: ${({ width }) => width};
   height: ${({ height }) => height};
   border-radius: ${({ borderRadius }) => borderRadius};
-  border: ${({ border }) => border};
-  border-bottom: ${({ borderBottom }) => borderBottom};
-  border-right: ${({ borderRight }) => borderRight};
-  border-left: ${({ borderLeft }) => borderLeft};
-  border-top: ${({ borderTop }) => borderTop};
-  padding-top: ${({ paddingTop }) => paddingTop};
-  padding-bottom: ${({ paddingBottom }) => paddingBottom};
-  padding-right: ${({ paddingRight }) => paddingRight};
-  padding-left: ${({ paddingLeft }) => paddingLeft};
+  border: ${({ $border }) => $border};
+  
   font-size: ${({ fontSize }) => fontSize};
   font-weight: ${({ fontWeight }) => fontWeight};
 `

@@ -26,12 +26,12 @@ export const Text = ({
   return (
     <StyledText
       display={display}
-      alignitems={alignitems}
+      $alignitems={alignitems}
       fontSize={fontSize}
       color={color}
       fontWeight={fontWeight}
-      justifycontent={justifycontent}
-      gap={gap}
+      $justifycontent={justifycontent}
+      $gap={gap}
       width={width}
       height={height}
     >

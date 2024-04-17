@@ -9,14 +9,14 @@ type StyledTextProps = {
   borderRadius?: string;
   wdith?: string;
   height?: string;
-  alignitems?: string;
+  $alignitems?: string;
   justifycontent?: string;
 };
 
 export const StyledText = styled.p<StyledTextProps>`
   background-color: ${({ background }) => background};
   display: flex;
-  align-items: ${({ alignitems }) => alignitems};
+  align-items: ${({ $alignitems }) => $alignitems};
   justify-content: ${({ justifycontent }) => justifycontent};
   color: ${({ color }) => color || '#A7AACD'};
   font-weight: ${({ fontWeight }) => fontWeight || 'bold'};
@@ -54,7 +54,7 @@ export const StyledFlexDiv = styled.div<{
   padding?: string;
   gridTemplateColumns?: string;
   width?: string;
-  border?: string;
+  $border?: string;
   margin?: string;
 }>`
   width: ${({ width }) => width};
@@ -66,7 +66,7 @@ export const StyledFlexDiv = styled.div<{
   align-items: ${({ alignitems }) => alignitems};
   justify-content: ${({ justifycontent }) => justifycontent};
   grid-template-columns: ${({ gridTemplateColumns }) => gridTemplateColumns};
-  border: ${({ border }) => border}; 
+  border: ${({ $border }) => $border}; 
   margin: ${({ margin }) => margin};
   
 `;

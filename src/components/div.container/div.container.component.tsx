@@ -42,18 +42,18 @@ export const DivContainer = ({
   return (
     <StyledDiv
       display={display}
-      alignitems={alignitems}
-      justifycontent={justifycontent}
-      flexdirection={flexdirection}
-      gap={gap}
+      $alignitems={alignitems}
+      $justifycontent={justifycontent}
+      $flexdirection={flexdirection}
+      $gap={gap}
       margin={margin}
-      padding={padding}
+      $padding={padding}
       width={width}
       height={height}
-      background={background}
-      borderradius={borderradius}
-      border={border}
-      borderright={borderright}
+      $background={background}
+      $borderradius={borderradius}
+      $border={border}
+      $borderright={borderright}
       color={color}
       fontSize={fontSize}
       fontWeight={fontWeight}

@@ -39,7 +39,13 @@ export const ProfileInfoCard = (card: ProfileInfoCardProps) => {
         alignitems='center'
       >
         {card.title === 'APOSTAS ATIVAS' ? (
-          <Text color={card.secondaryColor}>{card.ativas}</Text>
+          <span
+            style={{
+              color: card.secondaryColor,
+            }}
+          >
+            {card.ativas}
+          </span>
         ) : null}
         {card.description}
         {card.title === 'SALDO' ? <img src={AddDinheiro}></img> : null}

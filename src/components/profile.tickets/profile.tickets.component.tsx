@@ -29,7 +29,7 @@ export const ProfileTickets = () => {
   return (
     <StyledSection>
       <StyledHeader>
-        <StyledNav border='2px solid #104788' color='#177FE9'>
+        <StyledNav $border='2px solid #104788' color='#177FE9'>
           BILHETES
           <StyledSpan>3</StyledSpan>
         </StyledNav>

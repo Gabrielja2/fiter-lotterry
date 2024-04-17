@@ -45,23 +45,23 @@ export const Button = ({
 }) => {
   return (
     <StyledButton
-      padding={padding}
+      $padding={padding}
       width={width}
       type={type}
       disabled={disabled}
       color={color}
-      border={border}
-      borderradius={borderradius}
-      background={background}
+      $border={border}
+      $borderradius={borderradius}
+      $background={background}
       display={display}
-      alignitems={alignitems}
-      justifycontent={justifycontent}
-      gap={gap}
-      fontWeight={fontWeight}
+      $alignitems={alignitems}
+      $justifycontent={justifycontent}
+      $gap={gap}
+      $fontWeight={fontWeight}
       fontSize={fontSize}
-      transition={transition}
-      hover={hover}
-      height={height}
+      $transition={transition}
+      $hover={hover}
+      $height={height}
       margin={margin}
       onClick={onClick}
     >

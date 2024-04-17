@@ -5,9 +5,9 @@ export const StyledText = styled.p<{
   color?: string,
   fontWeight?: string
   display?: string
-  alignitems?: string
-  justifycontent?: string
-  gap?: string
+  $alignitems?: string
+  $justifycontent?: string
+  $gap?: string
   width?: string
   height?: string
 }>`
@@ -15,9 +15,9 @@ export const StyledText = styled.p<{
   color: ${({ color }) => color};
   font-weight: ${({ fontWeight }) => fontWeight};
   display: ${({ display }) => display};
-  align-items: ${({ alignitems }) => alignitems};
-  justify-content: ${({ justifycontent }) => justifycontent};
-  gap: ${({ gap }) => gap};
+  align-items: ${({ $alignitems }) => $alignitems};
+  justify-content: ${({ $justifycontent }) => $justifycontent};
+  gap: ${({ $gap }) => $gap};
   width: ${({ width }) => width};
   height: ${({ height }) => height};
   overflow-x: hidden;

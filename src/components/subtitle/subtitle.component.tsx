@@ -8,7 +8,7 @@ export const SubTitle = ({
   weight?: string;
 }) => {
   return (
-    <StyledSubTitle weight={weight} className='subtitle'>
+    <StyledSubTitle $weight={weight} className='subtitle'>
       {subtitle}
     </StyledSubTitle>
   );
