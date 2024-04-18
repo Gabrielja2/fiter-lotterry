@@ -5,6 +5,8 @@ import DinheiroIcon from '../../assets/dinheiro1.png';
 import LucroIcon from '../../assets/lucro1.png';
 
 export const ProfileInfoCards = () => {
+  const localUserData = JSON.parse(localStorage.getItem('userData') || '{}');
+
   const cards = [
     {
       title: 'APOSTAS ATIVAS',
@@ -16,7 +18,10 @@ export const ProfileInfoCards = () => {
     },
     {
       title: 'SALDO',
-      description: 'R$: 50.000,00',
+      description: localUserData.user.balance.toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+      }),
       src: DinheiroIcon,
       primaryColor: '#17E72C',
     },

@@ -13,13 +13,14 @@ export const UserInfo = () => {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    const localUserData = localStorage.getItem('userData');
+    const localUserData = JSON.parse(localStorage.getItem('userData') || '{}');
+
     if (!token || !localUserData) {
       navigate('/login');
       return;
     }
 
-    setUserData(JSON.parse(localUserData));
+    setUserData(localUserData);
   }, [navigate]);
 
   const handleOpenMenu = () => {
@@ -86,7 +87,10 @@ export const UserInfo = () => {
                 color='#17E72C'
                 fontWeight='bold'
               >
-                R$: {userData?.user.balance ?? '50.000,00'}
+                {userData?.user.balance?.toLocaleString('pt-BR', {
+                  style: 'currency',
+                  currency: 'BRL',
+                })}
               </Text>
             </DivContainer>
           </DivContainer>

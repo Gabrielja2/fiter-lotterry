@@ -90,7 +90,10 @@ export const TicketCard = ({ index }: TicketCardProps) => {
             fontSize='12px'
             color='#17E72C'
           >
-            {getPriceTicket(selectedCount).toFixed(2).replace('.', ',')}
+            {getPriceTicket(selectedCount).toLocaleString('pt-BR', {
+              style: 'currency',
+              currency: 'BRL',
+            })}
           </Text>
         </DivContainer>
       </DivContainer>
