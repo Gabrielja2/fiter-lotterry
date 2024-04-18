@@ -20,7 +20,7 @@ import TotalContext from '../../context/total.context';
 
 export const ProfileTickets = () => {
   const { totalPrice } = useContext(TotalContext);
-  // const [totalPrice, setTotalPrice] = useState('0,00');
+
   const [tickets, setTickets] = useState<
     {
       [key: number]: ITicket;
@@ -96,6 +96,7 @@ export const ProfileTickets = () => {
           fontWeight='bold'
           transition='background-color 0.3s'
           hover='#14132d'
+          onClick={() => setTickets([])}
         >
           COMPRAR BILHETES
         </Button>
