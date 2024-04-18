@@ -46,6 +46,15 @@ export const StyledSpan = styled.span`
     font-weight: bold;
 `
 
+export const StyledDisplayMobile = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+    justify-content: center;
+  }
+`
+
 
 export const StyledFooterText = styled.p`
     display: flex;

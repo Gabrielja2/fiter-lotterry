@@ -9,7 +9,7 @@ export const StyledDiv = styled.div<{
   $flexdirection?: string
   $flexwrap?: string
   $gap?: string
-  margin?: string
+  $margin?: string
   $padding?: string
   width?: string
   height?: string
@@ -28,7 +28,7 @@ export const StyledDiv = styled.div<{
   color: ${({ color }) => color};
   background: ${({ $background }) => $background};
   gap: ${({ $gap }) => $gap};
-  margin: ${({ margin }) => margin};
+  margin: ${({ $margin }) => $margin};
   padding: ${({ $padding }) => $padding};
   width: ${({ width }) => width};
   height: ${({ height }) => height};
@@ -37,5 +37,6 @@ export const StyledDiv = styled.div<{
   border-right: ${({ $borderright }) => $borderright};  
   border-bottom: ${({ $borderbottom }) => $borderbottom};
   font-size: ${({ fontSize }) => fontSize};
-  font-weight: ${({ fontWeight }) => fontWeight};
+  font-weight: ${({ fontWeight }) => fontWeight}; 
+  
 `

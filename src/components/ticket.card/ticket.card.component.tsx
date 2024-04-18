@@ -102,8 +102,8 @@ export const TicketCard = ({ index }: TicketCardProps) => {
       <StyledFlexDiv
         display='grid'
         $gridTemplateColumns='repeat(5, 1fr)'
-        gap='10px'
-        margin=' 0px auto'
+        $gap='10px'
+        $margin=' 0px auto'
       >
         {ticketNumbers.map((currentNumber, index) => (
           <Button
@@ -117,6 +117,7 @@ export const TicketCard = ({ index }: TicketCardProps) => {
             width='30px'
             alignitems='center'
             justifycontent='center'
+            disabled={selectedCount >= 20 ? true : false}
             onClick={() => handleSelectNumber(currentNumber)}
           >
             {index + 1}

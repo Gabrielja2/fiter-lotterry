@@ -11,6 +11,7 @@ import {
   StyledHeader,
   StyledSpan,
   StyledFooterText,
+  StyledDisplayMobile,
 } from './profile.tickets.styled';
 import InfoIcon from '../../assets/info-button1.png';
 import { useState } from 'react';
@@ -32,7 +33,7 @@ export const ProfileTickets = () => {
         </StyledNav>
         <StyledNav color='#A7AACD'>RESULTADOS</StyledNav>
       </StyledHeader>
-      <DivContainer display='flex' flexwrap='wrap'>
+      <StyledDisplayMobile>
         <DivContainer
           display='flex'
           alignitems='start'
@@ -58,7 +59,7 @@ export const ProfileTickets = () => {
             </DivContainer>
           );
         })}
-      </DivContainer>
+      </StyledDisplayMobile>
       <DivContainer
         display='flex'
         gap='5px'
