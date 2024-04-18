@@ -7,23 +7,23 @@ type TicketCardProps = {
   index: number;
 };
 
-const getPriceTicket = (selectedNumbers: number): number | string => {
+const getPriceTicket = (selectedNumbers: number): number => {
   switch (selectedNumbers) {
     case 15:
-      return Number(3).toFixed(2).replace('.', ',');
+      return 3;
     case 16:
-      return Number(100).toFixed(2).replace('.', ',');
+      return 100;
     case 17:
-      return Number(300).toFixed(2).replace('.', ',');
+      return 300;
     case 18:
-      return Number(5000).toFixed(2).replace('.', ',');
+      return 5000;
     case 19:
-      return Number(15000).toFixed(2).replace('.', ',');
+      return 15000;
     case 20:
-      return Number(25000).toFixed(2).replace('.', ',');
+      return 25000;
 
     default:
-      return Number(0).toFixed(2);
+      return 0;
   }
 };
 
@@ -54,7 +54,7 @@ export const TicketCard = ({ index }: TicketCardProps) => {
     const selectedCount = selecteds.length;
     const totalPrice = getPriceTicket(selectedCount);
 
-    setTotal(totalPrice as number);
+    setTotal(totalPrice as number, index);
   }, [selectedNumbers]);
 
   return (
@@ -73,7 +73,7 @@ export const TicketCard = ({ index }: TicketCardProps) => {
         padding='15px'
       >
         <Text display='flex' color='#A7AACD' fontWeight='bold' fontSize='12px'>
-          BILHETE #{index}
+          BILHETE #{index + 1}
         </Text>
         <DivContainer display='flex' gap='5px'>
           <Text
@@ -90,7 +90,7 @@ export const TicketCard = ({ index }: TicketCardProps) => {
             fontSize='12px'
             color='#17E72C'
           >
-            {getPriceTicket(selectedCount)}
+            {getPriceTicket(selectedCount).toFixed(2).replace('.', ',')}
           </Text>
         </DivContainer>
       </DivContainer>

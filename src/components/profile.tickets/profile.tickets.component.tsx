@@ -73,7 +73,7 @@ export const ProfileTickets = () => {
           {'VALOR TOTAL: '}
         </Text>
         <Text color='#177FE9' fontWeight='bold' fontSize='12px'>
-          {`R$ ${totalPrice}`}
+          {`R$ ${totalPrice.toFixed(2).replace('.', ',')}`}
         </Text>
       </DivContainer>
       <DivContainer
