@@ -14,11 +14,13 @@ import {
   StyledDisplayMobile,
 } from './profile.tickets.styled';
 import InfoIcon from '../../assets/info-button1.png';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { ITicket } from './utils';
+import TotalContext from '../../context/total.context';
 
 export const ProfileTickets = () => {
-  const [totalPrice, setTotalPrice] = useState('0,00');
+  const { totalPrice } = useContext(TotalContext);
+  // const [totalPrice, setTotalPrice] = useState('0,00');
   const [tickets, setTickets] = useState<
     {
       [key: number]: ITicket;
@@ -56,7 +58,7 @@ export const ProfileTickets = () => {
               padding='10px 27px'
               key={index}
             >
-              <TicketCard index={index} setTotalPrice={setTotalPrice} />
+              <TicketCard index={index} />
             </DivContainer>
           );
         })}

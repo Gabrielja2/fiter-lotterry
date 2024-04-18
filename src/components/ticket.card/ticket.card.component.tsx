@@ -1,29 +1,29 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { StyledFlexDiv } from './ticket.card.styled';
 import { Button, DivContainer, Text } from '../../components';
-
+import TotalContext from '../../context/total.context';
 type TicketCardProps = {
   index: number;
-  setTotalPrice: (value: string) => void;
 };
 
-const getPriceTicket = (selectedNumbers: number): string => {
+const getPriceTicket = (selectedNumbers: number): number | string => {
   switch (selectedNumbers) {
     case 15:
-      return '3,00';
+      return Number(3).toFixed(2).replace('.', ',');
     case 16:
-      return '100,00';
+      return Number(100).toFixed(2).replace('.', ',');
     case 17:
-      return '300,00';
+      return Number(300).toFixed(2).replace('.', ',');
     case 18:
-      return '5.000,00';
+      return Number(5000).toFixed(2).replace('.', ',');
     case 19:
-      return '15.000,00';
+      return Number(15000).toFixed(2).replace('.', ',');
     case 20:
-      return '25.000,00';
+      return Number(25000).toFixed(2).replace('.', ',');
+
     default:
-      return '0,00';
+      return Number(0).toFixed(2);
   }
 };
 
@@ -32,7 +32,9 @@ const ticketNumbers = [
   23, 24, 25,
 ];
 
-export const TicketCard = ({ index, setTotalPrice }: TicketCardProps) => {
+export const TicketCard = ({ index }: TicketCardProps) => {
+  const { setTotal } = useContext(TotalContext);
+
   const [selectedNumbers, setSelectedNumbers] = useState<{
     [key: number]: boolean;
   }>({});
@@ -45,12 +47,6 @@ export const TicketCard = ({ index, setTotalPrice }: TicketCardProps) => {
       ...oldState,
       [currentNumber]: !oldState[currentNumber],
     }));
-
-    const selecteds = Object.values(selectedNumbers).filter(Boolean);
-    const selectedCount = selecteds.length;
-    const totalPrice = getPriceTicket(selectedCount);
-
-    setTotalPrice(String(totalPrice));
   };
 
   useEffect(() => {
@@ -58,8 +54,8 @@ export const TicketCard = ({ index, setTotalPrice }: TicketCardProps) => {
     const selectedCount = selecteds.length;
     const totalPrice = getPriceTicket(selectedCount);
 
-    setTotalPrice(String(totalPrice));
-  }, [selectedNumbers, setTotalPrice]);
+    setTotal(totalPrice as number);
+  }, [selectedNumbers]);
 
   return (
     <DivContainer
