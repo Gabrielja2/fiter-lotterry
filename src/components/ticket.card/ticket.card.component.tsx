@@ -1,44 +1,38 @@
-import { useState } from 'react';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useEffect, useState } from 'react';
 import { StyledFlexDiv } from './ticket.card.styled';
 import { Button, DivContainer, Text } from '../../components';
 
 type TicketCardProps = {
   index: number;
+  setTotalPrice: (value: string) => void;
 };
 
-function getPriceLabel(selectedNumbers: number): string {
-  const fifiteenNumbersPrice = selectedNumbers === 15 ? '3,00' : '0,00';
-  const sixteenNumbersPrice = selectedNumbers === 16 ? '100,00' : '0,00';
-  const seventeenNumbersPrice = selectedNumbers === 17 ? '300,00' : '0,00';
-  const eighteenNumbersPrice = selectedNumbers === 18 ? '5.000,00' : '0,00';
-  const nineteenNumbersPrice = selectedNumbers === 19 ? '15.000,00' : '0,00';
-  const twentyNumbersPrice = selectedNumbers === 20 ? '25.000,00' : '0,00';
-
+const getPriceTicket = (selectedNumbers: number): string => {
   switch (selectedNumbers) {
     case 15:
-      return fifiteenNumbersPrice;
+      return '3,00';
     case 16:
-      return sixteenNumbersPrice;
+      return '100,00';
     case 17:
-      return seventeenNumbersPrice;
+      return '300,00';
     case 18:
-      return eighteenNumbersPrice;
+      return '5.000,00';
     case 19:
-      return nineteenNumbersPrice;
+      return '15.000,00';
     case 20:
-      return twentyNumbersPrice;
-
+      return '25.000,00';
     default:
       return '0,00';
   }
-}
+};
 
 const ticketNumbers = [
   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
   23, 24, 25,
 ];
 
-export const TicketCard = ({ index }: TicketCardProps) => {
+export const TicketCard = ({ index, setTotalPrice }: TicketCardProps) => {
   const [selectedNumbers, setSelectedNumbers] = useState<{
     [key: number]: boolean;
   }>({});
@@ -51,7 +45,21 @@ export const TicketCard = ({ index }: TicketCardProps) => {
       ...oldState,
       [currentNumber]: !oldState[currentNumber],
     }));
+
+    const selecteds = Object.values(selectedNumbers).filter(Boolean);
+    const selectedCount = selecteds.length;
+    const totalPrice = getPriceTicket(selectedCount);
+
+    setTotalPrice(String(totalPrice));
   };
+
+  useEffect(() => {
+    const selecteds = Object.values(selectedNumbers).filter(Boolean);
+    const selectedCount = selecteds.length;
+    const totalPrice = getPriceTicket(selectedCount);
+
+    setTotalPrice(String(totalPrice));
+  }, [selectedNumbers, setTotalPrice]);
 
   return (
     <DivContainer
@@ -86,7 +94,7 @@ export const TicketCard = ({ index }: TicketCardProps) => {
             fontSize='12px'
             color='#17E72C'
           >
-            {getPriceLabel(selectedCount)}
+            {getPriceTicket(selectedCount)}
           </Text>
         </DivContainer>
       </DivContainer>

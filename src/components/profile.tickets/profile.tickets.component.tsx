@@ -18,6 +18,7 @@ import { useState } from 'react';
 import { ITicket } from './utils';
 
 export const ProfileTickets = () => {
+  const [totalPrice, setTotalPrice] = useState('0,00');
   const [tickets, setTickets] = useState<
     {
       [key: number]: ITicket;
@@ -29,7 +30,7 @@ export const ProfileTickets = () => {
       <StyledHeader>
         <StyledNav $border='2px solid #104788' color='#177FE9'>
           BILHETES
-          <StyledSpan>3</StyledSpan>
+          <StyledSpan>{tickets.length}</StyledSpan>
         </StyledNav>
         <StyledNav color='#A7AACD'>RESULTADOS</StyledNav>
       </StyledHeader>
@@ -55,7 +56,7 @@ export const ProfileTickets = () => {
               padding='10px 27px'
               key={index}
             >
-              <TicketCard {...ticket} index={index} />
+              <TicketCard index={index} setTotalPrice={setTotalPrice} />
             </DivContainer>
           );
         })}
@@ -70,7 +71,7 @@ export const ProfileTickets = () => {
           {'VALOR TOTAL: '}
         </Text>
         <Text color='#177FE9' fontWeight='bold' fontSize='12px'>
-          {'R$ 25.000,00'}
+          {`R$ ${totalPrice}`}
         </Text>
       </DivContainer>
       <DivContainer
