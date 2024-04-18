@@ -46,39 +46,6 @@ export const StyledSpan = styled.span`
     font-weight: bold;
 `
 
-export const StyledAddTicketContainer = styled.div`
-    display: flex;
-    align-items: start;
-    padding: 10px 27px;
-    justify-content: center;
-    flex-direction: column;
-
-`
-
-export const StyledBuyTicketsContainer = styled.div`
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 20px;   
-`
-
-export const StyledTicketsButton = styled.button<{ width?: string, height?: string, background?: string, color?: string }>`
-    width: ${({ width }) => width || '259px'};
-    height: ${({ height }) => height || '65px'};
-    border: none;
-    border-radius: 10px;
-    background-color: ${({ background }) => background || '#2546F4'};
-    font-size: 18px;
-    color: ${({ color }) => color || '#ffffff'};
-    font-weight: bold;
-    cursor: pointer;
-`
-
-export const StyledFooterContainer = styled.div`
-    display: flex;
-    align-items: center;   
-    padding: 10px 27px;
-`
 
 export const StyledFooterText = styled.p`
     display: flex;
@@ -93,34 +60,5 @@ export const StyledFooterText = styled.p`
     }
 `
 
-export const StyledTicketContainer = styled.div`
-    display: flex;
-    flex-wrap: wrap;    
-`
 
-export const StyledTotalContainer = styled.div`
-    display: flex;
-    gap: 5px;
-    align-items: center;
-    padding: 5px 27px;
-`
 
-export const StyledTotal = styled.p`
-    font-weight: bold;
-    font-size: 12px;
-    color: #A7AACD;
-`
-
-export const StyledTotalPrice = styled.p`
-    font-weight: bold;
-    font-size: 12px;
-    color: #17E72C;
-`
-
-export const StyledTicketCardContainer = styled.div`
-     display: flex;
-    align-items: start;
-    padding: 10px 27px;
-    justify-content: center;
-    flex-direction: column;
-`

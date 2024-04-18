@@ -1,11 +1,6 @@
 import { useState } from 'react';
-import {
-  StyledTicketCard,
-  StyledText,
-  StyledHeader,
-  StyledFlexDiv,
-  StyledButton,
-} from './ticket.card.styled';
+import { StyledFlexDiv } from './ticket.card.styled';
+import { Button, DivContainer, Text } from '../../components';
 
 type TicketCardProps = {
   index: number;
@@ -59,17 +54,51 @@ export const TicketCard = ({ index }: TicketCardProps) => {
   };
 
   return (
-    <StyledTicketCard>
-      <StyledHeader>
-        <StyledText>BILHETE #{index}</StyledText>
-        <StyledFlexDiv display='flex' gap='5px'>
-          <StyledText>Valor:</StyledText>
-          <StyledText color='#17E72C'>
+    <DivContainer
+      display='flex'
+      flexdirection='column'
+      border='1px #177FE9 solid'
+      width='240px'
+      height='285px'
+      margin='30px 0px 0px 0px'
+    >
+      <DivContainer
+        display='flex'
+        justifycontent='space-between'
+        borderbottom='1px #177FE9 dotted'
+        padding='15px'
+      >
+        <Text display='flex' color='#A7AACD' fontWeight='bold' fontSize='12px'>
+          BILHETE #{index}
+        </Text>
+        <DivContainer display='flex' gap='5px'>
+          <Text
+            display='flex'
+            color='#A7AACD'
+            fontWeight='bold'
+            fontSize='12px'
+          >
+            Valor:
+          </Text>
+          <Text
+            display='flex'
+            fontWeight='bold'
+            fontSize='12px'
+            color='#17E72C'
+          >
             {getPriceLabel(selectedCount)}
-          </StyledText>
-        </StyledFlexDiv>
-      </StyledHeader>
-      <StyledText padding='10px 25px'>Selecionados: {selectedCount}</StyledText>
+          </Text>
+        </DivContainer>
+      </DivContainer>
+      <Text
+        display='flex'
+        fontWeight='bold'
+        fontSize='12px'
+        color='#A7AACD'
+        padding='10px 25px'
+      >
+        Selecionados: {selectedCount}
+      </Text>
       <StyledFlexDiv
         display='grid'
         $gridTemplateColumns='repeat(5, 1fr)'
@@ -77,22 +106,23 @@ export const TicketCard = ({ index }: TicketCardProps) => {
         margin=' 0px auto'
       >
         {ticketNumbers.map((currentNumber, index) => (
-          <StyledButton
+          <Button
             key={index}
             color='#FFFFFF'
             fontSize='16px'
             background='#313051'
-            $borderradius='100%'
+            border='none'
+            borderradius='100%'
             height='30px'
-            wdith='30px'
-            $alignitems='center'
+            width='30px'
+            alignitems='center'
             justifycontent='center'
             onClick={() => handleSelectNumber(currentNumber)}
           >
             {index + 1}
-          </StyledButton>
+          </Button>
         ))}
       </StyledFlexDiv>
-    </StyledTicketCard>
+    </DivContainer>
   );
 };

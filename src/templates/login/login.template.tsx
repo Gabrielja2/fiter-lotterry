@@ -5,6 +5,7 @@ import { Title, SubTitle, Form } from '../../components';
 import { ToastifyAdapter } from '../helpers/toast';
 import { useNavigate } from 'react-router-dom';
 import { RegisterProps } from '../types';
+import { useEffect } from 'react';
 
 export const LoginTemplate = () => {
   const navigate = useNavigate();
@@ -33,6 +34,12 @@ export const LoginTemplate = () => {
       });
     }
   };
+
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      navigate('/');
+    }
+  }, [navigate]);
 
   const loginFields = [
     { name: 'email', label: 'Email', type: 'email' },

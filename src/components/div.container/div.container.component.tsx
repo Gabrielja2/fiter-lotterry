@@ -6,6 +6,7 @@ export const DivContainer = ({
   alignitems,
   justifycontent,
   flexdirection,
+  flexwrap,
   gap,
   margin,
   padding,
@@ -15,6 +16,7 @@ export const DivContainer = ({
   borderradius,
   border,
   borderright,
+  borderbottom,
   color,
   fontSize,
   fontWeight,
@@ -25,6 +27,7 @@ export const DivContainer = ({
   alignitems?: string;
   justifycontent?: string;
   flexdirection?: string;
+  flexwrap?: string;
   gap?: string;
   margin?: string;
   padding?: string;
@@ -34,6 +37,7 @@ export const DivContainer = ({
   borderradius?: string;
   border?: string;
   borderright?: string;
+  borderbottom?: string;
   color?: string;
   fontSize?: string;
   fontWeight?: string;
@@ -45,6 +49,7 @@ export const DivContainer = ({
       $alignitems={alignitems}
       $justifycontent={justifycontent}
       $flexdirection={flexdirection}
+      $flexwrap={flexwrap}
       $gap={gap}
       margin={margin}
       $padding={padding}
@@ -54,6 +59,7 @@ export const DivContainer = ({
       $borderradius={borderradius}
       $border={border}
       $borderright={borderright}
+      $borderbottom={borderbottom}
       color={color}
       fontSize={fontSize}
       fontWeight={fontWeight}

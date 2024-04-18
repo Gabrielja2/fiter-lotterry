@@ -7,6 +7,7 @@ export const StyledDiv = styled.div<{
   $alignitems?: string,
   $justifycontent?: string
   $flexdirection?: string
+  $flexwrap?: string
   $gap?: string
   margin?: string
   $padding?: string
@@ -15,6 +16,7 @@ export const StyledDiv = styled.div<{
   $borderradius?: string
   $border?: string
   $borderright?: string
+  $borderbottom?: string
   fontSize?: string
   fontWeight?: string
 }>`
@@ -22,6 +24,7 @@ export const StyledDiv = styled.div<{
   align-items: ${({ $alignitems }) => $alignitems};
   justify-content: ${({ $justifycontent }) => $justifycontent};
   flex-direction: ${({ $flexdirection }) => $flexdirection};
+  flex-wrap: ${({ $flexwrap }) => $flexwrap};
   color: ${({ color }) => color};
   background: ${({ $background }) => $background};
   gap: ${({ $gap }) => $gap};
@@ -32,6 +35,7 @@ export const StyledDiv = styled.div<{
   border-radius: ${({ $borderradius }) => $borderradius};
   border: ${({ $border }) => $border};
   border-right: ${({ $borderright }) => $borderright};  
+  border-bottom: ${({ $borderbottom }) => $borderbottom};
   font-size: ${({ fontSize }) => fontSize};
   font-weight: ${({ fontWeight }) => fontWeight};
 `

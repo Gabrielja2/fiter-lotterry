@@ -17,12 +17,3 @@ export const StyledSection = styled.main`
     }
  
 `
-
-export const StyledSubtitleContainer = styled.div`
-    display: flex;
-    align-items: center;
-    padding-block: 43px;
-    color: #ffffff;
-    font-size: 32px;
-    font-weight: bold;
-`

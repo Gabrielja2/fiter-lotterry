@@ -10,6 +10,7 @@ export const StyledText = styled.p<{
   $gap?: string
   width?: string
   height?: string
+  $padding?: string
 }>`
   font-size: ${({ fontSize }) => fontSize};
   color: ${({ color }) => color};
@@ -20,6 +21,7 @@ export const StyledText = styled.p<{
   gap: ${({ $gap }) => $gap};
   width: ${({ width }) => width};
   height: ${({ height }) => height};
+  padding: ${({ $padding }) => $padding};
   overflow-x: hidden;
   white-space: nowrap;
   text-overflow: ellipsis

@@ -4,12 +4,9 @@ import {
   ProfileInfoCards,
   SubTitle,
   ProfileTickets,
+  DivContainer,
 } from '../../components';
-import {
-  StyledProfileContainer,
-  StyledSection,
-  StyledSubtitleContainer,
-} from './profile.styled';
+import { StyledProfileContainer, StyledSection } from './profile.styled';
 
 export const ProfileTemplate = () => {
   return (
@@ -23,9 +20,16 @@ export const ProfileTemplate = () => {
           {'< VOLTAR'}
         </Link>
 
-        <StyledSubtitleContainer>
+        <DivContainer
+          display='flex'
+          alignitems='center'
+          padding='43px 0px'
+          color='#ffffff'
+          fontSize='32px'
+          fontWeight='bold'
+        >
           <SubTitle weight='normal' subtitle='Perfil' />
-        </StyledSubtitleContainer>
+        </DivContainer>
         <ProfileInfoCards />
         <ProfileTickets />
       </StyledSection>

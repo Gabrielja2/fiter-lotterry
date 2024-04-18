@@ -11,6 +11,7 @@ export const Text = ({
   gap,
   width,
   height,
+  padding,
 }: {
   children: React.ReactNode;
   fontSize?: string;
@@ -22,6 +23,7 @@ export const Text = ({
   gap?: string;
   width?: string;
   height?: string;
+  padding?: string;
 }) => {
   return (
     <StyledText
@@ -34,6 +36,7 @@ export const Text = ({
       $gap={gap}
       width={width}
       height={height}
+      $padding={padding}
     >
       {children}
     </StyledText>
