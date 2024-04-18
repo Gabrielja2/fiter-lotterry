@@ -34,3 +34,24 @@ export const StyledDiv = styled.div<{
   font-size: ${({ fontSize }) => fontSize};
   font-weight: ${({ fontWeight }) => fontWeight};
 `
+
+
+export const DisplayMobile = styled.div`
+/* mobile */
+  display: flex;
+
+/* desktop */
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
+export const DisplayDesktop = styled.div`
+/* mobile */
+  display: none;
+
+/* desktop */
+  @media (min-width: 768px) {
+    display: flex;
+  }
+`;

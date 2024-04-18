@@ -3,30 +3,24 @@ import LogoutIcon from '../../assets/icon_logout.png';
 import CashIcon from '../../assets/cifrao1.png';
 import { DivContainer, Button, Text, ModalMenu } from '../../components';
 import { useNavigate } from 'react-router-dom';
+import { DisplayDesktop, DisplayMobile } from './user.info.styled';
+import { LoginResponse } from '../../types';
 
 export const UserInfo = () => {
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
-  const token = localStorage.getItem('token') || '';
-  console.log('token', token);
-  // if (!token) {
-  //   const userEmail = authenticationAdapter.decodeJsonWebToken(token as string);
-  //   console.log('userEmail', userEmail);
-  // }
+  const [userData, setUserData] = useState<LoginResponse>();
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth < 768);
-    };
+    const token = localStorage.getItem('token');
+    const localUserData = localStorage.getItem('userData');
+    if (!token || !localUserData) {
+      navigate('/login');
+      return;
+    }
 
-    window.addEventListener('resize', handleResize);
-    handleResize();
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+    setUserData(JSON.parse(localUserData));
+  }, [navigate]);
 
   const handleOpenMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -39,7 +33,7 @@ export const UserInfo = () => {
 
   return (
     <>
-      {isSmallScreen ? (
+      <DisplayMobile>
         <DivContainer
           display='flex'
           alignitems='center'
@@ -55,9 +49,10 @@ export const UserInfo = () => {
           fontWeight='bold'
           onClick={handleOpenMenu}
         >
-          GA
+          {userData?.user.email.slice(0, 2).toUpperCase()}
         </DivContainer>
-      ) : (
+      </DisplayMobile>
+      <DisplayDesktop>
         <DivContainer display='flex' gap='20px' height='34px'>
           <DivContainer display='flex' alignitems='center' gap='10px'>
             <DivContainer
@@ -73,7 +68,7 @@ export const UserInfo = () => {
               fontSize='18px'
               fontWeight='bold'
             >
-              GA
+              {userData?.user.email.slice(0, 2).toUpperCase()}
             </DivContainer>
             <DivContainer display='flex' flexdirection='column'>
               <Text
@@ -82,7 +77,7 @@ export const UserInfo = () => {
                 color='#0D67BD'
                 fontWeight='bold'
               >
-                id: {token}
+                id: {userData?.user.id}
               </Text>
 
               <Text
@@ -91,7 +86,7 @@ export const UserInfo = () => {
                 color='#17E72C'
                 fontWeight='bold'
               >
-                R$: 50.000,00
+                R$: {userData?.user.balance ?? '50.000,00'}
               </Text>
             </DivContainer>
           </DivContainer>
@@ -133,8 +128,13 @@ export const UserInfo = () => {
             </Button>
           </DivContainer>
         </DivContainer>
+      </DisplayDesktop>
+      {isMenuOpen && (
+        <ModalMenu
+          userId={userData?.user.id as string}
+          onClick={handleLogout}
+        />
       )}
-      {isMenuOpen && <ModalMenu userId={token} onClick={handleLogout} />}
     </>
   );
 };

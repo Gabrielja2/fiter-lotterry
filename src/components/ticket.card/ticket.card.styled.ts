@@ -6,7 +6,7 @@ type StyledTextProps = {
   fontWeight?: string;
   background?: string;
   padding?: string;
-  borderRadius?: string;
+  $borderradius?: string;
   wdith?: string;
   height?: string;
   $alignitems?: string;
@@ -22,9 +22,38 @@ export const StyledText = styled.p<StyledTextProps>`
   font-weight: ${({ fontWeight }) => fontWeight || 'bold'};
   font-size: ${({ fontSize }) => fontSize || '12px'};
   padding: ${({ padding }) => padding};
-  border-radius: ${({ borderRadius }) => borderRadius};
+  border-radius: ${({ $borderradius }) => $borderradius};
   width: ${({ wdith }) => wdith};
   height: ${({ height }) => height};
+  
+`;
+
+type StyledButtonProps = {
+  color?: string;
+  fontSize?: string;
+  fontWeight?: string;
+  background?: string;
+  padding?: string;
+  $borderradius?: string;
+  wdith?: string;
+  height?: string;
+  $alignitems?: string;
+  justifycontent?: string;
+};
+
+export const StyledButton = styled.button<StyledButtonProps>`
+  background-color: ${({ background }) => background};
+  display: flex;
+  align-items: ${({ $alignitems }) => $alignitems};
+  justify-content: ${({ justifycontent }) => justifycontent};
+  color: ${({ color }) => color || '#A7AACD'};
+  font-weight: ${({ fontWeight }) => fontWeight || 'bold'};
+  font-size: ${({ fontSize }) => fontSize || '12px'};
+  padding: ${({ padding }) => padding};
+  border-radius: ${({ $borderradius }) => $borderradius};
+  width: ${({ wdith }) => wdith};
+  height: ${({ height }) => height};
+  border: none;
   
 `;
 
@@ -52,7 +81,7 @@ export const StyledFlexDiv = styled.div<{
   justifycontent?: string;
   flexDirection?: string;
   padding?: string;
-  gridTemplateColumns?: string;
+  $gridTemplateColumns?: string;
   width?: string;
   $border?: string;
   margin?: string;
@@ -65,7 +94,7 @@ export const StyledFlexDiv = styled.div<{
   flex-wrap: ${({ wrap }) => wrap};
   align-items: ${({ alignitems }) => alignitems};
   justify-content: ${({ justifycontent }) => justifycontent};
-  grid-template-columns: ${({ gridTemplateColumns }) => gridTemplateColumns};
+  grid-template-columns: ${({ $gridTemplateColumns }) => $gridTemplateColumns};
   border: ${({ $border }) => $border}; 
   margin: ${({ margin }) => margin};
   

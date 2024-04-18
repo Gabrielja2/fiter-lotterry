@@ -24,7 +24,7 @@ export const StyledHeader = styled.header`
     border-bottom: 2px #212144 solid;
 `
 
-export const StyledNav = styled.nav<{ color: string, $border?: string }>`
+export const StyledNav = styled.nav<{ color?: string, $border?: string }>`
     display: flex;
     gap: 10px;
     height: 100%;

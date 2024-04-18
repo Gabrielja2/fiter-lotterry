@@ -12,7 +12,7 @@ export const LoginTemplate = () => {
   const handleLogin = async ({ email, password }: RegisterProps) => {
     const response = await UserServices.login(email, password);
 
-    if (typeof response === 'string') {
+    if (response.token) {
       ToastifyAdapter.toast(`Login realizado com sucesso! `, {
         position: 'top-right',
         autoClose: 3000,
@@ -20,10 +20,11 @@ export const LoginTemplate = () => {
         theme: 'dark',
         type: 'success',
       });
-      localStorage.setItem('token', response);
-      navigate('/profile');
+      localStorage.setItem('token', response.token);
+      localStorage.setItem('userData', JSON.stringify(response));
+      navigate('/');
     } else {
-      ToastifyAdapter.toast(`${response['message']}`, {
+      ToastifyAdapter.toast(response.message, {
         position: 'top-right',
         autoClose: 3000,
         pauseOnHover: true,

@@ -44,7 +44,7 @@ export const ProfileTickets = () => {
         {tickets.map((ticket, index) => {
           return (
             <StyledTicketCardContainer key={index}>
-              <TicketCard {...ticket} />
+              <TicketCard {...ticket} index={index} />
             </StyledTicketCardContainer>
           );
         })}
