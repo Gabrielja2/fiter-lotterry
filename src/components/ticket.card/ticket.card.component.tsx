@@ -110,14 +110,14 @@ export const TicketCard = ({ index }: TicketCardProps) => {
             key={index}
             color='#FFFFFF'
             fontSize='16px'
-            background='#313051'
+            background={selectedNumbers[currentNumber] ? '#EA8E41' : '#313051'}
             border='none'
             borderradius='100%'
             height='30px'
             width='30px'
             alignitems='center'
             justifycontent='center'
-            disabled={selectedCount >= 20 ? true : false}
+            disabled={selectedCount >= 20 && !selectedNumbers[currentNumber]}
             onClick={() => handleSelectNumber(currentNumber)}
           >
             {index + 1}
