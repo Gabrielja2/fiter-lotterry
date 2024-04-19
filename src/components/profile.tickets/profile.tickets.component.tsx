@@ -14,25 +14,27 @@ import {
   StyledDisplayMobile,
 } from './profile.tickets.styled';
 import InfoIcon from '../../assets/info-button1.png';
-import { useContext, useState } from 'react';
-import { ITicket } from './utils';
-import TotalContext from '../../context/total.context';
+import { useState } from 'react';
+import { useTicketsContext } from '../../context/context';
+import { TicketServices } from '../../services/ticket.service/ticket.service';
 
 export const ProfileTickets = () => {
-  const { totalPrice } = useContext(TotalContext);
+  const { totalPrice, allTickets } = useTicketsContext();
 
-  const [tickets, setTickets] = useState<
-    {
-      [key: number]: ITicket;
-    }[]
-  >([]);
+  const [ticketCards, setTicketCards] = useState<number[]>([]);
 
+  const handleSubmit = async () => {
+    await TicketServices.registerTickets(allTickets);
+    // etapa 2: limpar tickets do front
+    // etapa 3: atualizar saldos
+    // ....
+  };
   return (
     <StyledSection>
       <StyledHeader>
         <StyledNav $border='2px solid #104788' color='#177FE9'>
           BILHETES
-          <StyledSpan>{tickets.length}</StyledSpan>
+          <StyledSpan>{ticketCards.length}</StyledSpan>
         </StyledNav>
         <StyledNav color='#A7AACD'>RESULTADOS</StyledNav>
       </StyledHeader>
@@ -45,10 +47,12 @@ export const ProfileTickets = () => {
           padding='10px 27px'
         >
           <AddTicket
-            onClick={() => setTickets((oldList) => [...oldList, {}])}
+            onClick={() =>
+              setTicketCards((oldList) => [...oldList, oldList.length + 1])
+            }
           />
         </DivContainer>
-        {tickets.map((ticket, index) => {
+        {ticketCards.map((_, index) => {
           return (
             <DivContainer
               display='flex'
@@ -96,7 +100,10 @@ export const ProfileTickets = () => {
           fontWeight='bold'
           transition='background-color 0.3s'
           hover='#14132d'
-          onClick={() => setTickets([])}
+          onClick={() => {
+            console.log('allTickets', allTickets);
+            handleSubmit();
+          }}
         >
           COMPRAR BILHETES
         </Button>

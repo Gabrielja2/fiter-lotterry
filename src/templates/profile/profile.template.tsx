@@ -7,10 +7,11 @@ import {
   DivContainer,
 } from '../../components';
 import { StyledProfileContainer, StyledSection } from './profile.styled';
-import { TotalProvider } from '../../context/total.context';
+import { TicketsContextProvider } from '../../context/context';
+
 export const ProfileTemplate = () => {
   return (
-    <TotalProvider>
+    <TicketsContextProvider>
       <StyledProfileContainer>
         <Header />
         <StyledSection>
@@ -35,6 +36,6 @@ export const ProfileTemplate = () => {
           <ProfileTickets />
         </StyledSection>
       </StyledProfileContainer>
-    </TotalProvider>
+    </TicketsContextProvider>
   );
 };

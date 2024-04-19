@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useContext, useEffect, useState } from 'react';
+import { useState } from 'react';
 import { StyledFlexDiv } from './ticket.card.styled';
 import { Button, DivContainer, Text } from '../../components';
-import TotalContext from '../../context/total.context';
+import { useTicketsContext } from '../../context/context';
+import { ITicket } from '../profile.tickets/utils/interfaces';
 type TicketCardProps = {
   index: number;
 };
@@ -33,7 +34,7 @@ const ticketNumbers = [
 ];
 
 export const TicketCard = ({ index }: TicketCardProps) => {
-  const { setTotal } = useContext(TotalContext);
+  const { setTickets } = useTicketsContext();
 
   const [selectedNumbers, setSelectedNumbers] = useState<{
     [key: number]: boolean;
@@ -43,19 +44,28 @@ export const TicketCard = ({ index }: TicketCardProps) => {
   const selectedCount = selecteds.length;
 
   const handleSelectNumber = (currentNumber: number) => {
-    setSelectedNumbers((oldState) => ({
-      ...oldState,
-      [currentNumber]: !oldState[currentNumber],
-    }));
+    // novo estado com o valor selecionado
+    const newState = {
+      ...selectedNumbers,
+      [currentNumber]: !selectedNumbers[currentNumber],
+    };
+    setSelectedNumbers((oldState) => ({ ...oldState, ...newState }));
+
+    // novos numeros selecionados filtrados por valor TRUE
+    const newSelectedNumbers = Object.keys(newState)
+      .filter((key) => Boolean(newState[Number(key)]))
+      .map(Number);
+
+    // if (newN.length < 15) return;
+    const newTicket: ITicket = {
+      ticketId: index + 1,
+      price: getPriceTicket(newSelectedNumbers.length),
+      selectedNumbers: newSelectedNumbers,
+    };
+    console.log({ newTicket, newSelectedNumbers });
+
+    setTickets(newTicket);
   };
-
-  useEffect(() => {
-    const selecteds = Object.values(selectedNumbers).filter(Boolean);
-    const selectedCount = selecteds.length;
-    const totalPrice = getPriceTicket(selectedCount);
-
-    setTotal(totalPrice as number, index);
-  }, [selectedNumbers]);
 
   return (
     <DivContainer
