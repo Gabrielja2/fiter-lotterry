@@ -1,30 +1,62 @@
-# React + TypeScript + Vite
+# Sejam bem vindos ao repositório frontend do projeto fiter-lottery!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto foi completamente desenvolvido em TypeScript, utilizando Reacts.js,
+styled-components, zod e outras bibliotecas auxiliares como, react-hook-form,
+react-toastify, react-router-dom, entre algumas outras. 🚀
 
-Currently, two official plugins are available:
+# Orientações
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Antes de iniciar o projeto
 
-## Expanding the ESLint configuration
+👀 Leia essa parte atentamente, pois aqui você encontrará informações
+importantes para rodar corretamente o projeto.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+<details>
+<summary><strong> 🔰 Instruções </strong></summary><br />
 
-- Configure the top-level `parserOptions` property like this:
+1. Clone o repositório
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- `git clone https://github.com/Gabrielja2/fiter-lottery.git`
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Entre na pasta do repositório que você acabou de clonar:
+
+- `cd pasta-do-repositório`
+
+3. Instale as dependências
+
+- `npm install`
+
+4. Configure as variáveis de ambiente, é <strong>Obrigatório</strong> para
+   funcionar corretamente:
+
+- Confira o arquivo .env na raiz do projeto e preencha com as variáveis de
+  ambiente caso seja necessário, mas ja vou deixar elas preenchidas nesse
+  exemplo, lembre que é obrigatório algumas dessas váriaveis para conseguir
+  rodar o servidor como a VITE_API_BASE_URL=`http://localhost:3030/api`
+
+6. Dentro do diretório FITER-LOTTERY-FRONT, abra um terminal e rode o projeto:
+
+- `npm run dev`
+
+</details><br />
+
+# Pages
+
+<details>
+<summary><strong>Path `/` </strong></summary>
+
+- É referente a página de profile
+</details><br />
+
+<details>
+<summary><strong>Path `/login`</strong></summary>
+
+- É referente a página de login de usuário, necessário para ter acesso ao path
+`/` do perfil do usuário
+</details><br />
+
+<details>
+<summary><strong>Path `/register`</strong></summary>
+
+- É referente a página de criação um usuário
+</details><br /><br />
